@@ -1,0 +1,41 @@
+@import "../tokens/theme.css";
+@import "./inline-alert.css";
+@import "./admin-shell.css";
+
+:root {
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(107, 114, 255, 0.2), transparent 28%),
+    linear-gradient(180deg, #08111f 0%, #060b14 48%, #04070d 100%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}

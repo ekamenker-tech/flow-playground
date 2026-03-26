@@ -1,0 +1,25 @@
+:root {
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+
+  --color-bg-canvas: #04070d;
+  --color-surface-strong: rgba(10, 18, 31, 0.86);
+  --color-border-subtle: rgba(142, 159, 186, 0.18);
+
+  --color-text-primary: #f3f7ff;
+  --color-text-secondary: #b6c1d4;
+  --color-text-tertiary: #7d8ba5;
+
+  --color-danger-200: #ffb7bf;
+  --color-danger-300: #ff8f9c;
+  --color-danger-400: #ff6678;
+  --color-danger-700: rgba(255, 102, 120, 0.35);
+
+  --color-warning-200: #ffd7a3;
+  --color-warning-300: #ffbf6a;
+  --color-warning-400: #ffb547;
+  --color-warning-700: rgba(255, 181, 71, 0.32);
+
+  --shadow-panel:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
