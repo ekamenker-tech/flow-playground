@@ -1,15 +1,6 @@
 import { useState } from "react";
-import { Icon, type IconName } from "../components/Icon";
+import { Icon, iconNames } from "../components/Icon";
 import { InlineAlert, type InlineAlertSeverity, type InlineAlertStyle } from "../components/InlineAlert";
-
-const allIcons: IconName[] = [
-  "upload", "download", "home", "close", "plus", "minus", "search", "bell",
-  "settings", "menu-burger", "chevron-down", "chevron-up", "chevron-left",
-  "chevron-right", "arrow-left", "arrow-right", "check-mark", "info-circle",
-  "warning-circle", "done-check", "exclamation-triangle", "trash", "edit",
-  "copy", "lock", "star", "heart", "share", "users", "single-user", "logout",
-  "calendar", "clock", "bolt", "play", "pause", "eye-on", "eye-off",
-];
 
 const iconSizes = [16, 20, 24, 32];
 
@@ -46,7 +37,7 @@ export function ComponentsPage() {
             <h2 className="comp-section__title">Icon</h2>
           </div>
           <div className="comp-section__meta">
-            <span className="status-pill status-pill--info">{allIcons.length} icons</span>
+            <span className="status-pill status-pill--info">{iconNames.length} icons</span>
             <div className="size-picker" role="group" aria-label="Icon size">
               {iconSizes.map((s) => (
                 <button
@@ -62,7 +53,7 @@ export function ComponentsPage() {
         </div>
 
         <div className="icon-grid">
-          {allIcons.map((name) => (
+          {iconNames.map((name) => (
             <button
               key={name}
               className={`icon-tile${copied === name ? " icon-tile--copied" : ""}`}
