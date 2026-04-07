@@ -1,0 +1,228 @@
+.comp-shell {
+  margin: 0 auto;
+  max-width: 1280px;
+  min-height: 100vh;
+  padding: 48px 24px 72px;
+  display: grid;
+  gap: 2rem;
+  align-content: start;
+}
+
+/* ── Section ── */
+.comp-section {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 28px;
+  box-shadow: var(--shadow-panel);
+  display: grid;
+  gap: 1.5rem;
+  padding: 28px;
+}
+
+.comp-section__header {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.comp-section__meta {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.comp-section__title {
+  color: var(--color-text-primary);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* ── Status pill extra variant ── */
+.status-pill--info {
+  background: rgba(99, 179, 255, 0.12);
+  color: #7ec8ff;
+}
+
+/* ── Size picker ── */
+.size-picker {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 10px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.size-btn {
+  background: none;
+  border: none;
+  border-radius: 7px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  transition: background 0.12s, color 0.12s;
+}
+
+.size-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--color-text-primary);
+}
+
+.size-btn--active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+/* ── Icon grid ── */
+.icon-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.icon-tile {
+  align-items: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 8px 12px;
+  position: relative;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.icon-tile:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-border-subtle);
+}
+
+.icon-tile--copied {
+  background: rgba(99, 179, 255, 0.08);
+  border-color: rgba(99, 179, 255, 0.3);
+}
+
+.icon-tile__label {
+  color: var(--color-text-tertiary);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  text-align: center;
+  word-break: break-all;
+}
+
+.icon-tile__toast {
+  background: rgba(99, 179, 255, 0.9);
+  border-radius: 6px;
+  bottom: calc(100% + 6px);
+  color: #04070d;
+  font-size: 0.7rem;
+  font-weight: 700;
+  left: 50%;
+  padding: 3px 8px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* ── Alert preview grid ── */
+.alert-preview-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.alert-preview-cell {
+  display: grid;
+  gap: 8px;
+}
+
+.alert-preview-label {
+  color: var(--color-text-tertiary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ── Usage block ── */
+.comp-usage {
+  border-top: 1px solid var(--color-border-subtle);
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 1.25rem;
+}
+
+.comp-code {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  color: #a5d8ff;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  margin: 0;
+  overflow-x: auto;
+  padding: 16px 20px;
+}
+
+/* ── App-level nav ── */
+.app-nav {
+  background: rgba(6, 11, 20, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: flex;
+  gap: 4px;
+  padding: 10px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-tab {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  transition: background 0.12s, color 0.12s;
+}
+
+.nav-tab:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-secondary);
+}
+
+.nav-tab--active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 640px) {
+  .comp-shell {
+    padding: 24px 16px 48px;
+  }
+
+  .comp-section {
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}

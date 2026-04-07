@@ -1,6 +1,7 @@
 @import "../tokens/theme.css";
 @import "./inline-alert.css";
 @import "./admin-shell.css";
+@import "./components-page.css";
 
 :root {
   color: var(--color-text-primary);
