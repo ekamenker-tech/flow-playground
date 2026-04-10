@@ -1,0 +1,46 @@
+/*
+ * CW Design System — Backdrop Component
+ *
+ * Full-screen overlay behind modals and bottom sheets.
+ * Blocks pointer interaction with content beneath.
+ *
+ * Tokens:
+ *   fill: rgba(0, 0, 0, 0.75)  — _components/backdrop/fill
+ *   blur: blur(8px)            — backdrop/blur (Figma radius 16px = CSS 8px)
+ *
+ * Usage rules (Surface & Elevation system):
+ *   Modal dialogs  → Backdrop + surface.base + elevation.modal
+ *   Bottom sheets  → Backdrop + surface.base (no elevation)
+ *   Snackbars      → no Backdrop
+ *   Dropdowns      → no Backdrop
+ *
+ * Source: Figma node 4852:5008, Confluence JYByp
+ */
+
+.cw-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.75);  /* _components/backdrop/fill */
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 400;  /* below modal (500) and toast (600), above page content */
+}
+
+/* Clickable variant — shows pointer cursor when onClick is present */
+.cw-backdrop[onClick],
+.cw-backdrop--clickable {
+  cursor: pointer;
+}
+
+/* Animate in/out — pair with open prop for smooth transitions */
+@keyframes cw-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cw-backdrop {
+  animation: cw-backdrop-in 200ms ease;
+}
