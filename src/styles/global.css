@@ -1,13 +1,18 @@
+@import "../tokens/palette.css";
+@import "../tokens/typography.css";
+@import "../tokens/spacing.css";
 @import "../tokens/theme.css";
 @import "./inline-alert.css";
 @import "./admin-shell.css";
 @import "./components-page.css";
 
 :root {
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
+  color: var(--cw-text-primary);
+  font-family: var(--cw-font-family);
+  font-size: var(--cw-text-body1-size);
+  line-height: var(--cw-text-body1-line-height);
+  font-weight: var(--cw-font-weight-regular);
   font-synthesis: none;
-  line-height: 1.5;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

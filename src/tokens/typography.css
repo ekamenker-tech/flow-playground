@@ -1,0 +1,165 @@
+/*
+ * CW Design System — Typography Tokens
+ *
+ * Defines font family, weights, and the complete UI type scale.
+ * All values sourced from Figma › CW Design System 2025 › Typography (node 4599:1797)
+ *
+ * Usage: components reference these tokens, never raw values.
+ * Naming: --cw-font-{property} / --cw-text-{role}-{property}
+ *
+ * Type scale prefix: UI/
+ * Two groups: Display (h1–h4) and UI (body, subtitle, caption, overline, button)
+ */
+
+:root {
+
+  /* ─── Font Family ─────────────────────────────────────── */
+  --cw-font-family: "Inter", "Segoe UI", sans-serif;
+
+  /* ─── Font Weights ────────────────────────────────────── */
+  --cw-font-weight-regular: 400;  /* UI/body, caption, overline base     */
+  --cw-font-weight-medium:  500;  /* UI/h1–h4, subtitle1, subtitle2      */
+  --cw-font-weight-bold:    600;  /* UI/overline, UI/button              */
+
+  /* ─── Display: Headings ───────────────────────────────── */
+  /* h1 */
+  --cw-text-h1-size:        32px;
+  --cw-text-h1-line-height: 40px;
+  --cw-text-h1-weight:      var(--cw-font-weight-medium);
+  --cw-text-h1-tracking:    0;
+
+  /* h2 */
+  --cw-text-h2-size:        24px;
+  --cw-text-h2-line-height: 32px;
+  --cw-text-h2-weight:      var(--cw-font-weight-medium);
+  --cw-text-h2-tracking:    0;
+
+  /* h3 */
+  --cw-text-h3-size:        20px;
+  --cw-text-h3-line-height: 28px;
+  --cw-text-h3-weight:      var(--cw-font-weight-medium);
+  --cw-text-h3-tracking:    0;
+
+  /* h4 */
+  --cw-text-h4-size:        18px;
+  --cw-text-h4-line-height: 24px;
+  --cw-text-h4-weight:      var(--cw-font-weight-medium);
+  --cw-text-h4-tracking:    0;
+
+  /* ─── Body ────────────────────────────────────────────── */
+  /* body1 — default body text */
+  --cw-text-body1-size:        16px;
+  --cw-text-body1-line-height: 24px;
+  --cw-text-body1-weight:      var(--cw-font-weight-regular);
+  --cw-text-body1-tracking:    0;
+
+  /* body2 — compact body text */
+  --cw-text-body2-size:        14px;
+  --cw-text-body2-line-height: 20px;
+  --cw-text-body2-weight:      var(--cw-font-weight-regular);
+  --cw-text-body2-tracking:    0;
+
+  /* ─── Subtitle ────────────────────────────────────────── */
+  /* subtitle1 — medium-weight body, for labels/section titles */
+  --cw-text-subtitle1-size:        16px;
+  --cw-text-subtitle1-line-height: 24px;
+  --cw-text-subtitle1-weight:      var(--cw-font-weight-medium);
+  --cw-text-subtitle1-tracking:    0;
+
+  /* subtitle2 — compact medium-weight, for dense UI */
+  --cw-text-subtitle2-size:        14px;
+  --cw-text-subtitle2-line-height: 20px;
+  --cw-text-subtitle2-weight:      var(--cw-font-weight-medium);
+  --cw-text-subtitle2-tracking:    0;
+
+  /* ─── Caption ─────────────────────────────────────────── */
+  /* caption — helper text, timestamps, metadata */
+  --cw-text-caption-size:        12px;
+  --cw-text-caption-line-height: 16px;
+  --cw-text-caption-weight:      var(--cw-font-weight-regular);
+  --cw-text-caption-tracking:    0;
+
+  /* ─── Overline ────────────────────────────────────────── */
+  /* overline — all-caps labels, section eyebrows */
+  --cw-text-overline-size:        12px;
+  --cw-text-overline-line-height: 16px;
+  --cw-text-overline-weight:      var(--cw-font-weight-bold);
+  --cw-text-overline-tracking:    0;
+
+  /* ─── Button ──────────────────────────────────────────── */
+  /* button — interactive control labels */
+  --cw-text-button-size:        14px;
+  --cw-text-button-line-height: 20px;
+  --cw-text-button-weight:      var(--cw-font-weight-bold);
+  --cw-text-button-tracking:    0;
+
+}
+
+/* ─── Utility Classes ─────────────────────────────────────
+ * Optional: use these on elements directly when a token
+ * reference alone isn't sufficient (e.g. in plain HTML).
+ * Components should prefer token references over these.
+ * ─────────────────────────────────────────────────────── */
+
+.cw-text-h1 {
+  font-size:   var(--cw-text-h1-size);
+  font-weight: var(--cw-text-h1-weight);
+  line-height: var(--cw-text-h1-line-height);
+  letter-spacing: var(--cw-text-h1-tracking);
+}
+
+.cw-text-h2 {
+  font-size:   var(--cw-text-h2-size);
+  font-weight: var(--cw-text-h2-weight);
+  line-height: var(--cw-text-h2-line-height);
+  letter-spacing: var(--cw-text-h2-tracking);
+}
+.cw-text-h3 {
+  font-size:   var(--cw-text-h3-size);
+  font-weight: var(--cw-text-h3-weight);
+  line-height: var(--cw-text-h3-line-height);
+  letter-spacing: var(--cw-text-h3-tracking);
+}
+.cw-text-h4 {
+  font-size:   var(--cw-text-h4-size);
+  font-weight: var(--cw-text-h4-weight);
+  line-height: var(--cw-text-h4-line-height);
+  letter-spacing: var(--cw-text-h4-tracking);
+}
+.cw-text-body1 {
+  font-size:   var(--cw-text-body1-size);
+  font-weight: var(--cw-text-body1-weight);
+  line-height: var(--cw-text-body1-line-height);
+}
+.cw-text-body2 {
+  font-size:   var(--cw-text-body2-size);
+  font-weight: var(--cw-text-body2-weight);
+  line-height: var(--cw-text-body2-line-height);
+}
+.cw-text-subtitle1 {
+  font-size:   var(--cw-text-subtitle1-size);
+  font-weight: var(--cw-text-subtitle1-weight);
+  line-height: var(--cw-text-subtitle1-line-height);
+}
+.cw-text-subtitle2 {
+  font-size:   var(--cw-text-subtitle2-size);
+  font-weight: var(--cw-text-subtitle2-weight);
+  line-height: var(--cw-text-subtitle2-line-height);
+}
+.cw-text-caption {
+  font-size:   var(--cw-text-caption-size);
+  font-weight: var(--cw-text-caption-weight);
+  line-height: var(--cw-text-caption-line-height);
+}
+.cw-text-overline {
+  font-size:      var(--cw-text-overline-size);
+  font-weight:    var(--cw-text-overline-weight);
+  line-height:    var(--cw-text-overline-line-height);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.cw-text-button {
+  font-size:   var(--cw-text-button-size);
+  font-weight: var(--cw-text-button-weight);
+  line-height: var(--cw-text-button-line-height);
+}

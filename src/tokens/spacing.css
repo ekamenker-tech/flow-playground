@@ -1,0 +1,56 @@
+/*
+ * CW Design System — Spacing Tokens
+ *
+ * Defines all allowed values for padding, margins, and gaps.
+ * Built on a 4px base grid. Scale caps at 80px (spacing-12).
+ * Values above 80px are layout concerns, not spacing.
+ *
+ * Source: Confluence › Spacing System – Technical Changes (page 2724724882)
+ *         Figma › CW Design System 2025 › Spacing (node 4643:9566)
+ *
+ * Rules:
+ *   - New components: use ONLY --cw-space-* tokens for padding/margin/gap
+ *   - Legacy Size tokens: available for existing components, not for new work
+ *   - Never use raw px values for spacing in components
+ *
+ * Naming: --cw-space-{step}
+ */
+
+:root {
+
+  /* ─── Spacing Scale ───────────────────────────────────── */
+  --cw-space-0:   0px;   /* spacing-0  — reset / flush         */
+  --cw-space-1:   4px;   /* spacing-1  — hairline gap          */
+  --cw-space-2:   8px;   /* spacing-2  — tight / icon padding  */
+  --cw-space-3:  12px;   /* spacing-3  — compact padding       */
+  --cw-space-4:  16px;   /* spacing-4  — base unit             */
+  --cw-space-5:  20px;   /* spacing-5  — comfortable padding   */
+  --cw-space-6:  24px;   /* spacing-6  — section gap           */
+  --cw-space-7:  28px;   /* spacing-7                          */
+  --cw-space-8:  32px;   /* spacing-8  — panel padding         */
+  --cw-space-9:  40px;   /* spacing-9  — large section gap     */
+  --cw-space-10: 48px;   /* spacing-10 — page section padding  */
+  --cw-space-11: 64px;   /* spacing-11 — hero / major sections */
+  --cw-space-12: 80px;   /* spacing-12 — max spacing value     */
+
+}
+
+/*
+ * ─── Size Tokens (Legacy) ──────────────────────────────────
+ * Kept for backward compatibility with existing components.
+ * Do NOT use for new spacing work — use --cw-space-* instead.
+ * Large values (size-8 through size-10) are layout-specific.
+ * ──────────────────────────────────────────────────────── */
+
+:root {
+  --cw-size-1:   4px;
+  --cw-size-2:   8px;
+  --cw-size-3:  12px;
+  --cw-size-4:  16px;
+  --cw-size-5:  20px;
+  --cw-size-6:  24px;
+  --cw-size-7:  28px;
+  --cw-size-8:  160px;
+  --cw-size-9:  540px;
+  --cw-size-10: 732px;
+}

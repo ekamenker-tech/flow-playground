@@ -1,0 +1,119 @@
+/*
+ * CW Design System — Primitive Color Palette
+ *
+ * Raw color values sourced directly from Figma.
+ * DO NOT use these tokens in components directly.
+ * Components must reference semantic tokens only.
+ *
+ * Naming convention: --cw-{scale}-{step}
+ * Source: Figma › CW Design System 2025 › Color Primitives (node 50:1777)
+ */
+
+:root {
+
+  /* ─── Grey ───────────────────────────────────────────── */
+  --cw-grey-50:  #fafafa;
+  --cw-grey-100: #f2f2f2;
+  --cw-grey-200: #e8e8e8;
+  --cw-grey-300: #dbdbdb;
+  --cw-grey-400: #cfcfcf;
+  --cw-grey-500: #c3c3c3;
+  --cw-grey-600: #9c9c9c;
+  --cw-grey-700: #757575;
+  --cw-grey-800: #4f4f4f;
+  --cw-grey-900: #262626;
+  --cw-grey-950: #141414;
+
+  /* ─── Charcoal ───────────────────────────────────────── */
+  --cw-charcoal-50:  #eae7ee;
+  --cw-charcoal-100: #d2cdda;
+  --cw-charcoal-200: #a89eb8;
+  --cw-charcoal-300: #7b6c93;
+  --cw-charcoal-400: #514761;
+  --cw-charcoal-500: #292431;
+  --cw-charcoal-600: #201c26;
+  --cw-charcoal-700: #19161d;
+  --cw-charcoal-800: #110f15;
+  --cw-charcoal-900: #070609;
+  --cw-charcoal-950: #050406;
+
+  /* ─── Mauve ──────────────────────────────────────────── */
+  --cw-mauve-50:  #f2f0f5;
+  --cw-mauve-100: #e2dee8;
+  --cw-mauve-200: #c5bdd1;
+  --cw-mauve-300: #a89cba;
+  --cw-mauve-400: #8e7ea5;
+  --cw-mauve-500: #72608a;
+  --cw-mauve-600: #574969;
+  --cw-mauve-700: #3b3248;
+  --cw-mauve-800: #282130;
+  --cw-mauve-900: #141118;
+  --cw-mauve-950: #0a080c;
+
+  /* ─── Purple ─────────────────────────────────────────── */
+  --cw-purple-50:  #eee9f7;
+  --cw-purple-100: #daceed;
+  --cw-purple-200: #b8a1dd;
+  --cw-purple-250: #b78cff;
+  --cw-purple-300: #9371cc;
+  --cw-purple-400: #6f42b8;
+  --cw-purple-500: #533188;
+  --cw-purple-600: #42276d;
+  --cw-purple-700: #321e52;
+  --cw-purple-800: #221438;
+  --cw-purple-900: #10091a;
+  --cw-purple-950: #09050f;
+
+  /* ─── Red ────────────────────────────────────────────── */
+  --cw-red-50:  #fff5f5;
+  --cw-red-100: #ffe7e5;
+  --cw-red-200: #ffcfcc;
+  --cw-red-300: #ff9999;
+  --cw-red-400: #ffa39e;
+  --cw-red-500: #ff8983;
+  --cw-red-600: #ff4238;
+  --cw-red-700: #e60b00;
+  --cw-red-800: #990800;
+  --cw-red-900: #4d0400;
+  --cw-red-950: #290200;
+
+  /* ─── Green ──────────────────────────────────────────── */
+  --cw-green-50:  #effaf1;
+  --cw-green-100: #e4f6e7;
+  --cw-green-200: #c9eecf;
+  --cw-green-300: #aee5b7;
+  --cw-green-400: #92dd9f;
+  --cw-green-500: #77d487;
+  --cw-green-600: #45c45a;
+  --cw-green-700: #309741;
+  --cw-green-800: #20652b;
+  --cw-green-900: #103216;
+  --cw-green-950: #07170a;
+
+  /* ─── Blue ───────────────────────────────────────────── */
+  --cw-blue-50:  #f0f6fe;
+  --cw-blue-100: #dee8fa;
+  --cw-blue-200: #bad4fd;
+  --cw-blue-300: #98befb;
+  --cw-blue-400: #75a8fa;
+  --cw-blue-500: #5594f9;
+  --cw-blue-600: #136af7;
+  --cw-blue-700: #074ec0;
+  --cw-blue-800: #053480;
+  --cw-blue-900: #021a40;
+  --cw-blue-950: #010e22;
+
+  /* ─── Yellow ─────────────────────────────────────────── */
+  --cw-yellow-50:  #fff9e5;
+  --cw-yellow-100: #fff5d1;
+  --cw-yellow-200: #ffeba3;
+  --cw-yellow-300: #ffe175;
+  --cw-yellow-400: #ffd747;
+  --cw-yellow-500: #ffcc17;
+  --cw-yellow-600: #e0b000;
+  --cw-yellow-700: #a88400;
+  --cw-yellow-800: #705800;
+  --cw-yellow-900: #382c00;
+  --cw-yellow-950: #191400;
+
+}
