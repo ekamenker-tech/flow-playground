@@ -1,19 +1,19 @@
 .comp-shell {
+  align-content: start;
+  display: grid;
+  gap: 2rem;
   margin: 0 auto;
   max-width: 1280px;
   min-height: 100vh;
   padding: 48px 24px 72px;
-  display: grid;
-  gap: 2rem;
-  align-content: start;
 }
 
 /* ── Section ── */
 .comp-section {
-  background: var(--color-surface-strong);
-  border: 1px solid var(--color-border-subtle);
+  background: var(--cw-surface-raised);
+  border: 1px solid var(--cw-divider);
   border-radius: 28px;
-  box-shadow: var(--shadow-panel);
+  box-shadow: var(--cw-elevation-raised);
   display: grid;
   gap: 1.5rem;
   padding: 28px;
@@ -22,34 +22,28 @@
 .comp-section__header {
   align-items: flex-start;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .comp-section__meta {
   align-items: center;
   display: flex;
-  gap: 0.75rem;
   flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .comp-section__title {
-  color: var(--color-text-primary);
+  color: var(--cw-text-primary);
   font-size: 1.5rem;
   margin: 0;
-}
-
-/* ── Status pill extra variant ── */
-.status-pill--info {
-  background: rgba(99, 179, 255, 0.12);
-  color: #7ec8ff;
 }
 
 /* ── Size picker ── */
 .size-picker {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--color-border-subtle);
+  border: 1px solid var(--cw-divider);
   border-radius: 10px;
   display: flex;
   gap: 2px;
@@ -60,7 +54,7 @@
   background: none;
   border: none;
   border-radius: 7px;
-  color: var(--color-text-secondary);
+  color: var(--cw-text-secondary);
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 600;
@@ -70,12 +64,12 @@
 
 .size-btn:hover {
   background: rgba(255, 255, 255, 0.07);
-  color: var(--color-text-primary);
+  color: var(--cw-text-primary);
 }
 
 .size-btn--active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--cw-text-primary);
 }
 
 /* ── Icon grid ── */
@@ -90,7 +84,7 @@
   background: none;
   border: 1px solid transparent;
   border-radius: 14px;
-  color: var(--color-text-primary);
+  color: var(--cw-text-primary);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -102,16 +96,16 @@
 
 .icon-tile:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: var(--color-border-subtle);
+  border-color: var(--cw-divider);
 }
 
 .icon-tile--copied {
-  background: rgba(99, 179, 255, 0.08);
-  border-color: rgba(99, 179, 255, 0.3);
+  background: rgba(85, 148, 249, 0.08);
+  border-color: rgba(85, 148, 249, 0.3);
 }
 
 .icon-tile__label {
-  color: var(--color-text-tertiary);
+  color: var(--cw-text-helper);
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -121,10 +115,10 @@
 }
 
 .icon-tile__toast {
-  background: rgba(99, 179, 255, 0.9);
+  background: var(--cw-primary-main);
   border-radius: 6px;
   bottom: calc(100% + 6px);
-  color: #04070d;
+  color: #ffffff;
   font-size: 0.7rem;
   font-weight: 700;
   left: 50%;
@@ -135,7 +129,7 @@
   white-space: nowrap;
 }
 
-/* ── Alert preview grid ── */
+/* ── Alert / component preview grids ── */
 .alert-preview-grid {
   display: grid;
   gap: 16px;
@@ -148,7 +142,7 @@
 }
 
 .alert-preview-label {
-  color: var(--color-text-tertiary);
+  color: var(--cw-text-helper);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -156,9 +150,61 @@
   text-transform: uppercase;
 }
 
+/* ── Generic row / wrap demo layouts ── */
+.comp-row {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.comp-row--center {
+  align-items: center;
+}
+
+.comp-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Demo box for overlays (tooltip / popover / modal) ── */
+.comp-demo-box {
+  align-items: center;
+  background: var(--cw-surface-canvas);
+  border: 1px solid var(--cw-divider);
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  position: relative;
+}
+
+/* ── Tooltip inline demo ── */
+.tooltip-trigger-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip-trigger-wrap .cw-tooltip {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-trigger-wrap:hover .cw-tooltip,
+.tooltip-trigger-wrap:focus-within .cw-tooltip {
+  display: block;
+}
+
+.tooltip-trigger-wrap .cw-tooltip {
+  display: none;
+}
+
 /* ── Usage block ── */
 .comp-usage {
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--cw-divider);
   display: grid;
   gap: 0.5rem;
   padding-top: 1.25rem;
@@ -166,9 +212,9 @@
 
 .comp-code {
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid var(--color-border-subtle);
+  border: 1px solid var(--cw-divider);
   border-radius: 12px;
-  color: #a5d8ff;
+  color: var(--cw-purple-250);
   font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
   font-size: 0.8rem;
   line-height: 1.7;
@@ -179,9 +225,9 @@
 
 /* ── App-level nav ── */
 .app-nav {
-  background: rgba(6, 11, 20, 0.85);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--cw-surface-base);
+  border-bottom: 1px solid var(--cw-divider);
   display: flex;
   gap: 4px;
   padding: 10px 24px;
@@ -194,7 +240,7 @@
   background: none;
   border: none;
   border-radius: 8px;
-  color: var(--color-text-tertiary);
+  color: var(--cw-text-helper);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
@@ -204,12 +250,18 @@
 
 .nav-tab:hover {
   background: rgba(255, 255, 255, 0.06);
-  color: var(--color-text-secondary);
+  color: var(--cw-text-secondary);
 }
 
 .nav-tab--active {
   background: rgba(255, 255, 255, 0.08);
-  color: var(--color-text-primary);
+  color: var(--cw-text-primary);
+}
+
+/* ── Snackbar demo trigger area ── */
+.snackbar-demo-area {
+  min-height: 60px;
+  position: relative;
 }
 
 @media (max-width: 640px) {
