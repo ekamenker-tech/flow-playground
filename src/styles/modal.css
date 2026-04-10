@@ -1,0 +1,182 @@
+/*
+ * CW Design System — Modal Component
+ *
+ * Types:   simple | form | scrollable
+ * Sizes:   xs (480px) | sm (600px) | md (840px) | lg (1280px)
+ *
+ * Always paired with <Backdrop>. Never used without it.
+ * Surface: --cw-surface-base (#201c26)
+ * Shadow:  --cw-elevation-modal
+ * z-index: 500 (backdrop: 400, toast: 600)
+ *
+ * Source: Figma node 4919:2939
+ */
+
+/* ─── Positioning wrapper ────────────────────────────────────────────────────*/
+/* Modal is centered in the viewport above the backdrop */
+.cw-modal {
+  background: var(--cw-surface-base);
+  border-radius: var(--cw-radius-lg);
+  box-shadow: var(--cw-elevation-modal);
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-height: calc(100vh - var(--cw-space-9) * 2);
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  z-index: 500;
+}
+
+/* ─── Sizes ──────────────────────────────────────────────────────────────────*/
+.cw-modal--xs { width: 480px;  }
+.cw-modal--sm { width: 600px;  }
+.cw-modal--md { width: 840px;  }
+.cw-modal--lg { width: 1280px; }
+
+/* Responsive: cap width on smaller screens */
+@media (max-width: 640px) {
+  .cw-modal--xs,
+  .cw-modal--sm,
+  .cw-modal--md,
+  .cw-modal--lg {
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    left: 0;
+    max-height: 90vh;
+    top: auto;
+    transform: none;
+    width: 100%;
+  }
+}
+
+
+/* ─── Header ─────────────────────────────────────────────────────────────────*/
+.cw-modal__header {
+  align-items: flex-start;
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--cw-space-3);
+  justify-content: space-between;
+  padding: var(--cw-space-5) var(--cw-space-6);
+  width: 100%;
+}
+
+.cw-modal__title {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  gap: var(--cw-space-3);
+  min-width: 0;
+}
+
+.cw-modal__title-icon {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  padding: var(--cw-space-1) 0;
+}
+
+.cw-modal__title-text {
+  color: var(--cw-text-primary);
+  flex: 1;
+  font-size: var(--cw-text-h3-size);       /* 20px */
+  font-weight: var(--cw-text-h3-weight);   /* 500 */
+  line-height: var(--cw-text-h3-line-height); /* 28px */
+  min-width: 0;
+}
+
+.cw-modal__close {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--cw-text-secondary);
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  outline: none;
+  padding: var(--cw-space-1) 0;
+  transition: color 150ms ease;
+}
+
+.cw-modal__close:hover  { color: var(--cw-text-primary); }
+.cw-modal__close:focus-visible {
+  border-radius: var(--cw-radius-base);
+  outline: 2px solid var(--cw-primary-state-focus-visible);
+  outline-offset: 2px;
+}
+
+/* ─── Divider ────────────────────────────────────────────────────────────────*/
+.cw-modal__divider {
+  border: 0;
+  border-top: 1px solid var(--cw-divider);
+  flex-shrink: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+/* ─── Content ────────────────────────────────────────────────────────────────*/
+.cw-modal__content {
+  flex: 1;
+  min-height: 0;
+  padding: 0 var(--cw-space-6) var(--cw-space-6);
+  width: 100%;
+}
+
+/* form/scrollable: padding-top since divider sits above */
+.cw-modal--form .cw-modal__content,
+.cw-modal--scrollable .cw-modal__content {
+  padding-top: var(--cw-space-5);
+}
+
+/* scrollable type: content area overflows */
+.cw-modal__content--scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* ─── Actions ────────────────────────────────────────────────────────────────*/
+.cw-modal__actions {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--cw-space-3);
+  justify-content: flex-end;
+  padding: 0 var(--cw-space-5) var(--cw-space-5);
+  width: 100%;
+}
+
+/* form/scrollable: padding-top since divider sits above */
+.cw-modal--form .cw-modal__actions,
+.cw-modal--scrollable .cw-modal__actions {
+  padding-top: var(--cw-space-5);
+}
+
+/* ─── Entry animation ────────────────────────────────────────────────────────*/
+@keyframes cw-modal-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 12px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cw-modal {
+  animation: cw-modal-in 200ms ease;
+}
+
+/* Mobile: slide up from bottom */
+@media (max-width: 640px) {
+  @keyframes cw-modal-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
