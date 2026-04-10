@@ -1,0 +1,30 @@
+/*
+ * CW Design System — Loading Spinner
+ *
+ * Used inside ButtonWithLoader and any other loading state.
+ * Pure CSS animation — no SVG asset dependency.
+ * Size matches icon system: 20×20px by default.
+ *
+ * Source: Figma node 4425:2182, Icons/loading (1493:7902)
+ */
+
+@keyframes cw-spin {
+  to { transform: rotate(360deg); }
+}
+
+.cw-spinner {
+  animation: cw-spin 700ms linear infinite;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+}
+
+.cw-spinner--sm {
+  border-width: 1.5px;
+  height: 16px;
+  width: 16px;
+}

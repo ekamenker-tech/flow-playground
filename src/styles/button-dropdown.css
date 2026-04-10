@@ -1,0 +1,94 @@
+/*
+ * CW Design System — ButtonDropdown Component
+ *
+ * Secondary-colored split button with optional dropdown trigger.
+ * Variants: label | label-icon | label-dropdown | label-icon-dropdown
+ *
+ * Source: Figma node 4435:7986
+ * Variables: secondary/main, secondary/light, secondary/_states/hover,
+ *            secondary/_states/focusVisible, action/disabled, borderRadius/8
+ */
+
+/* ─── Wrapper ────────────────────────────────────────────────────────────────*/
+.cw-btn-dropdown {
+  border: 1px solid var(--cw-secondary-state-border);  /* secondary/light #514761 */
+  border-radius: var(--cw-radius-lg);
+  display: inline-flex;
+  height: 44px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── Main button area ───────────────────────────────────────────────────────*/
+.cw-btn-dropdown__main {
+  align-items: center;
+  appearance: none;
+  background: var(--cw-secondary-main);
+  border: 0;
+  color: var(--cw-secondary-contrast);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--cw-font-family);
+  font-size: var(--cw-text-button-size);
+  font-weight: var(--cw-text-button-weight);
+  gap: var(--cw-space-2);
+  line-height: var(--cw-text-button-line-height);
+  outline: none;
+  padding: 0 var(--cw-space-4);
+  transition: background 150ms ease;
+  white-space: nowrap;
+}
+
+.cw-btn-dropdown__main:hover {
+  background: #51476180;  /* secondary/_states/hover */
+}
+
+.cw-btn-dropdown__main:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--cw-mauve-700);
+  outline: 2px solid #7b6c93;  /* secondary/_states/focusVisible */
+  outline-offset: 2px;
+}
+
+/* ─── Dropdown trigger ───────────────────────────────────────────────────────*/
+.cw-btn-dropdown__trigger {
+  align-items: center;
+  appearance: none;
+  background: var(--cw-secondary-main);
+  border: 0;
+  border-left: 1px solid var(--cw-secondary-state-border);
+  color: var(--cw-secondary-contrast);
+  cursor: pointer;
+  display: inline-flex;
+  height: 100%;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  transition: background 150ms ease;
+  width: 44px;
+}
+
+.cw-btn-dropdown__trigger:hover {
+  background: #51476180;
+}
+
+.cw-btn-dropdown__trigger:focus-visible {
+  outline: 2px solid #7b6c93;
+  outline-offset: 2px;
+}
+
+/* ─── Disabled ───────────────────────────────────────────────────────────────*/
+.cw-btn-dropdown--disabled {
+  border-color: #ffffff1f;  /* action/disabledBackground */
+}
+
+.cw-btn-dropdown--disabled .cw-btn-dropdown__main,
+.cw-btn-dropdown--disabled .cw-btn-dropdown__trigger {
+  background: transparent;
+  color: #ffffff4d;  /* action/disabled */
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cw-btn-dropdown--disabled .cw-btn-dropdown__trigger {
+  border-left-color: #ffffff1f;
+}
