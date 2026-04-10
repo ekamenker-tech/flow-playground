@@ -1,0 +1,80 @@
+/*
+ * CW Design System — Surface & Elevation Tokens
+ *
+ * Three independent concepts — never conflate them:
+ *   Surface    → structural planes (background colors)
+ *   Elevation  → visual depth between planes (box-shadow)
+ *   Interaction → hover/active/selected overlays (in theme.css)
+ *
+ * Source: Confluence › Surface & Elevation System (page 2805399605)
+ *         Figma › CW Design System 2025 › Elevation (node 5293:5023)
+ *
+ * Rules:
+ *   - Overlay surfaces MUST always be paired with an elevation token
+ *   - elevation.modal MUST always be paired with a Backdrop
+ *   - Bottom sheets use surface.base + Backdrop, NO elevation
+ *   - Cards are defined in their own component spec
+ */
+
+:root {
+
+  /* ─── Surface Planes ──────────────────────────────────────
+   * Defines structural background planes only.
+   * Does NOT convey depth — elevation does that.
+   * ──────────────────────────────────────────────────────── */
+
+  /* canvas — page/app background, below all surfaces */
+  --cw-surface-canvas:  #141118;
+
+  /* base — primary content plane
+   * Use for: pages, modal dialogs, bottom sheets, main containers */
+  --cw-surface-base:    #201c26;
+
+  /* raised — secondary plane, sits above base
+   * Use for: cards, contained components within a base surface */
+  --cw-surface-raised:  #292430;
+
+  /* overlay — floating transient surface
+   * Use for: dropdowns, tooltips, popovers, select lists,
+   *          autocomplete panels, context menus, snackbars
+   * Must always be paired with an elevation token */
+  --cw-surface-overlay: #312c38;
+
+
+  /* ─── Elevation Levels ────────────────────────────────────
+   * Communicates depth via box-shadow only.
+   * Does NOT change surface color.
+   * Depth hierarchy: raised → overlay → toast → modal
+   * ──────────────────────────────────────────────────────── */
+
+  /* raised — subtle lift from base plane
+   * Use for: interactive or temporarily lifted elements */
+  --cw-elevation-raised:
+    0px 2px 4px -1px  #00000033,
+    0px 4px 5px  0px  #00000024,
+    0px 1px 10px 0px  #0000001f;
+
+  /* overlay — clear floating, preserves context
+   * Use for: dropdowns, tooltips, popovers, floating menus */
+  --cw-elevation-overlay:
+    0px 3px 5px  -1px #00000033,
+    0px 6px 10px  0px #00000024,
+    0px 1px 18px  0px #00000024;
+
+  /* toast — stronger than overlay, lighter than modal
+   * Use for: snackbars, global system messages
+   * No backdrop required */
+  --cw-elevation-toast:
+    0px 5px 5px  -3px #00000033,
+    0px 8px 10px  1px #00000024,
+    0px 3px 14px  2px #0000001f;
+
+  /* modal — maximum depth
+   * Use for: all modal dialogs
+   * MUST always be paired with a Backdrop */
+  --cw-elevation-modal:
+    0px 7px 8px  -4px #00000033,
+    0px 13px 19px 2px #00000024,
+    0px 5px 24px  4px #0000001f;
+
+}
