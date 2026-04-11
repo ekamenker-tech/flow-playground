@@ -9,34 +9,47 @@
  *   - default: bordered, 16px 8px padding
  *   - compact: no border, 8px 0 padding (inline/dense contexts)
  *
+ * All colors reference --cw-* semantic tokens only. No raw hex values.
+ *
  * Source: Figma node 5325:1696, Confluence page 2807988258
  */
 
 /* ─── Component-scoped color tokens ─────────────────────────────────────────*/
-.cw-validation-msg {
-  --vm-fg:     var(--cw-error-main);    /* default: error */
-  --vm-border: rgba(255, 128, 136, 0.16);
+.cw-validation-msg--error {
+  --vm-fg:     var(--cw-error-main);
+  --vm-border: color-mix(in srgb, var(--cw-error-main) 16%, transparent);
 }
-.cw-validation-msg--error   { --vm-fg: var(--cw-error-main);   --vm-border: rgba(255, 128, 136, 0.16); }
-.cw-validation-msg--warning { --vm-fg: #ffeba3;                --vm-border: rgba(224, 176, 0, 0.16);   }
-.cw-validation-msg--info    { --vm-fg: var(--cw-blue-200);     --vm-border: rgba(85, 148, 249, 0.16);  }
-.cw-validation-msg--success { --vm-fg: var(--cw-green-200);    --vm-border: rgba(69, 196, 90, 0.16);   }
+.cw-validation-msg--warning {
+  --vm-fg:     var(--cw-warning-light);   /* #ffcc17 — readable on dark bg */
+  --vm-border: color-mix(in srgb, var(--cw-warning-main) 16%, transparent);
+}
+.cw-validation-msg--info {
+  --vm-fg:     var(--cw-info-light);      /* #75a8fa — readable on dark bg */
+  --vm-border: color-mix(in srgb, var(--cw-info-main) 16%, transparent);
+}
+.cw-validation-msg--success {
+  --vm-fg:     var(--cw-success-light);   /* #77d487 — readable on dark bg */
+  --vm-border: color-mix(in srgb, var(--cw-success-main) 16%, transparent);
+}
 
 /* ─── Layout ─────────────────────────────────────────────────────────────────*/
 .cw-validation-msg {
+  --vm-fg:     var(--cw-error-main);
+  --vm-border: color-mix(in srgb, var(--cw-error-main) 16%, transparent);
+
   align-items: flex-start;
   border: 1px solid var(--vm-border);
-  border-radius: var(--cw-radius-lg);   /* 8px */
+  border-radius: var(--cw-radius-lg);
   color: var(--vm-fg);
   display: inline-flex;
   gap: 0;
   padding: var(--cw-space-2) var(--cw-space-4);  /* 8px 16px */
 }
 
-/* Compact — no border, reduced padding, for inline/dense contexts */
+/* Compact — no border, reduced padding */
 .cw-validation-msg--compact {
   border: 0;
-  padding: 0 var(--cw-space-2);  /* 0 8px */
+  padding: 0 var(--cw-space-2);
 }
 
 /* ─── Icon ───────────────────────────────────────────────────────────────────*/
@@ -44,21 +57,21 @@
   align-items: center;
   display: flex;
   flex-shrink: 0;
-  height: 28px;              /* matches line-height of body2 row */
-  padding: 7px 12px 7px 0;  /* center icon vertically in text line */
+  height: 28px;
+  padding: 7px 12px 7px 0;
 }
 .cw-validation-msg__icon svg {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
 }
 
 /* ─── Text ───────────────────────────────────────────────────────────────────*/
 .cw-validation-msg__text {
   color: var(--vm-fg);
   font-family: var(--cw-font-family);
-  font-size: var(--cw-text-body2-size);      /* 14px */
-  font-weight: var(--cw-text-body2-weight);  /* 400 */
-  line-height: var(--cw-text-body2-line-height); /* 20px */
+  font-size: var(--cw-text-body2-size);
+  font-weight: var(--cw-text-body2-weight);
+  line-height: var(--cw-text-body2-line-height);
   margin: 0;
-  padding: var(--cw-space-1) 0;  /* 4px top/bottom */
+  padding: var(--cw-space-1) 0;
 }

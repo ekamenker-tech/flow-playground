@@ -5,67 +5,64 @@
  * Styles:     default (tinted bg) | filled (solid bg)
  *
  * All colors from Figma component tokens (_components/alert/*)
- * mapped to --cw-* semantic tokens where available.
+ * mapped to --cw-* semantic tokens only. No raw hex values.
  *
  * Source: Figma node 5322:4038, Confluence page 2807988258
  */
 
 /* ─── Component-scoped color tokens ─────────────────────────────────────────*/
-/* These resolve per severity+style combination */
-.cw-inline-alert {
-  --ia-bg:  transparent;
-  --ia-fg:  var(--cw-text-primary);
-  --ia-action-fg: var(--ia-fg);
-}
 
-/* Default style — tinted backgrounds */
-.cw-inline-alert--default.cw-inline-alert--error   {
-  --ia-bg: rgba(255, 128, 136, 0.08);
-  --ia-fg: #ff9999;  /* _components/alert/error/color */
+/* Default style — tinted backgrounds, semantic fg color */
+.cw-inline-alert--default.cw-inline-alert--error {
+  --ia-bg: color-mix(in srgb, var(--cw-error-main) 8%, transparent);
+  --ia-fg: var(--cw-error-main);
 }
 .cw-inline-alert--default.cw-inline-alert--warning {
-  --ia-bg: rgba(224, 176, 0, 0.08);
-  --ia-fg: #ffeba3;  /* _components/alert/warning/color */
+  --ia-bg: color-mix(in srgb, var(--cw-warning-main) 8%, transparent);
+  --ia-fg: var(--cw-warning-light);       /* #ffcc17 — readable on dark bg */
 }
-.cw-inline-alert--default.cw-inline-alert--info    {
-  --ia-bg: rgba(85, 148, 249, 0.06);
-  --ia-fg: var(--cw-blue-200);  /* #bad4fd */
+.cw-inline-alert--default.cw-inline-alert--info {
+  --ia-bg: color-mix(in srgb, var(--cw-info-main) 8%, transparent);
+  --ia-fg: var(--cw-info-light);          /* #75a8fa — readable on dark bg */
 }
 .cw-inline-alert--default.cw-inline-alert--success {
-  --ia-bg: rgba(69, 196, 90, 0.06);
-  --ia-fg: var(--cw-green-200);  /* #c9eecf */
+  --ia-bg: color-mix(in srgb, var(--cw-success-main) 8%, transparent);
+  --ia-fg: var(--cw-success-light);       /* #77d487 — readable on dark bg */
 }
 
-/* Filled style — solid backgrounds */
-.cw-inline-alert--filled.cw-inline-alert--error   {
-  --ia-bg: #cc3d47;  /* _components/button/error/contained/hover */
-  --ia-fg: #ffffff;
+/* Filled style — solid semantic backgrounds */
+.cw-inline-alert--filled.cw-inline-alert--error {
+  --ia-bg: var(--cw-error-dark);          /* #e55c65 */
+  --ia-fg: var(--cw-error-contrast);      /* #fffffff2 */
 }
 .cw-inline-alert--filled.cw-inline-alert--warning {
-  --ia-bg: var(--cw-warning-main);  /* #e0b000 */
-  --ia-fg: #000000de;
+  --ia-bg: var(--cw-warning-main);        /* #e0b000 */
+  --ia-fg: var(--cw-warning-contrast);    /* #000000de */
 }
-.cw-inline-alert--filled.cw-inline-alert--info    {
-  --ia-bg: var(--cw-info-main);     /* #5594f9 */
-  --ia-fg: #000000de;
+.cw-inline-alert--filled.cw-inline-alert--info {
+  --ia-bg: var(--cw-info-main);           /* #5594f9 */
+  --ia-fg: var(--cw-info-contrast);       /* #000000de */
 }
 .cw-inline-alert--filled.cw-inline-alert--success {
-  --ia-bg: var(--cw-success-main);  /* #45c45a */
-  --ia-fg: #000000de;
+  --ia-bg: var(--cw-success-main);        /* #45c45a */
+  --ia-fg: var(--cw-success-contrast);    /* #000000de */
 }
 
 
 /* ─── Layout ─────────────────────────────────────────────────────────────────*/
 .cw-inline-alert {
+  --ia-bg: transparent;
+  --ia-fg: var(--cw-text-primary);
+
   align-items: flex-start;
   background: var(--ia-bg);
-  border-radius: var(--cw-radius-lg);   /* 8px */
+  border-radius: var(--cw-radius-lg);
   color: var(--ia-fg);
   display: grid;
   gap: 0;
   grid-template-columns: 32px minmax(0, 1fr) auto auto;
   min-height: 44px;
-  padding: var(--cw-space-2) var(--cw-space-3) var(--cw-space-2) var(--cw-space-4); /* 8 12 8 16 */
+  padding: var(--cw-space-2) var(--cw-space-3) var(--cw-space-2) var(--cw-space-4);
   width: min(100%, 320px);
 }
 
@@ -89,21 +86,21 @@
   flex-direction: column;
   gap: var(--cw-space-1);
   min-width: 0;
-  padding: var(--cw-space-2) 0;  /* 8px top/bottom */
+  padding: var(--cw-space-2) 0;
 }
 
 .cw-inline-alert__title {
   color: var(--ia-fg);
-  font-size: var(--cw-text-subtitle1-size);    /* 16px */
-  font-weight: var(--cw-text-subtitle1-weight); /* 500 */
+  font-size: var(--cw-text-subtitle1-size);
+  font-weight: var(--cw-text-subtitle1-weight);
   line-height: var(--cw-text-subtitle1-line-height);
   margin: 0;
 }
 
 .cw-inline-alert__description {
   color: var(--ia-fg);
-  font-size: var(--cw-text-body2-size);    /* 14px */
-  font-weight: var(--cw-text-body2-weight); /* 400 */
+  font-size: var(--cw-text-body2-size);
+  font-weight: var(--cw-text-body2-weight);
   line-height: var(--cw-text-body2-line-height);
   margin: 0;
 }
@@ -119,7 +116,7 @@
   display: inline-flex;
   font-family: var(--cw-font-family);
   font-size: 13px;
-  font-weight: var(--cw-font-weight-bold);  /* 600 */
+  font-weight: var(--cw-font-weight-bold);
   height: 30px;
   justify-content: center;
   line-height: 16px;
