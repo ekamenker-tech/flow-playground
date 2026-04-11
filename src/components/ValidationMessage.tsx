@@ -16,8 +16,15 @@ type ValidationMessageProps = {
   className?: string;
 };
 
-const severityIconName: Record<ValidationSeverity, "warning-circle" | "exclamation-triangle" | "info-circle" | "done-check"> = {
-  error:   "warning-circle",
+/**
+ * Icon mapping verified against Figma node 5153:17862–17865:
+ *   error   → exclamation-triangle  (NOT warning-circle — both error and warning use triangle)
+ *   warning → exclamation-triangle
+ *   info    → info-circle
+ *   success → done-check
+ */
+const severityIconName: Record<ValidationSeverity, "exclamation-triangle" | "info-circle" | "done-check"> = {
+  error:   "exclamation-triangle",
   warning: "exclamation-triangle",
   info:    "info-circle",
   success: "done-check",
@@ -34,7 +41,7 @@ const severityIconName: Record<ValidationSeverity, "warning-circle" | "exclamati
  *   - Disappears when condition is resolved
  *   - Never use for cross-section issues → use InlineAlert instead
  *
- * Source: Figma node 5325:1696, Confluence page 2807988258
+ * Source: Figma node 5153:17866, Confluence page 2807988258
  */
 export function ValidationMessage({
   message,
