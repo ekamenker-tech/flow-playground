@@ -12,8 +12,7 @@
 @import "./inline-alert.css";
 @import "./validation-message.css";
 @import "./snackbar.css";
-@import "./admin-shell.css";
-@import "./components-page.css";
+@import "./playground.css";
 
 :root {
   color: var(--cw-text-primary);
