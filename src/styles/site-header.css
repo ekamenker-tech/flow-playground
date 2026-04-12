@@ -1,0 +1,320 @@
+/*
+ * CW Design System — SiteHeader Component
+ *
+ * Full-width application header: sidebar toggle, logo, datetime,
+ * upload CTA, chat, notifications, user avatar + dropdown menu.
+ *
+ * All tokens verified against Figma node 1542:82549 via get_variable_defs.
+ *
+ * Surface tokens:
+ *   bg                → header-nav/background-color-default = #201c26 (--cw-surface-base)
+ *   border-bottom     → header-nav/border-color-bottom-default = #3b3248 (--cw-mauve-700)
+ *   menu bg           → dropdown/container-background-color-default = #292431 (--cw-secondary-main)
+ *   menu item border  → dropdown/option-border-color-bottom-default = #3b3248
+ *
+ * Text tokens:
+ *   date              → header-nav/text-color-date = #ffffff
+ *   timezone          → header-nav/text-color-timezone = #c3c3c3 (--cw-grey-500)
+ *   icons             → header-nav/icon-color-default = #ffffff
+ *   menu items        → dropdown/option-text-color-default = #ffffff
+ *   logout            → dropdown/option-text-color-error = #ff8983 (--cw-red-500 approx)
+ *
+ * Badge tokens:
+ *   bg                → header-nav/counter-background-color-default = #ffcc17 (--cw-yellow-500)
+ *   text              → header-nav/counter-text-color-default = #000000
+ *   border            → header-nav/counter-border-color-default = #201c26
+ *
+ * Avatar tokens:
+ *   bg                → avatar/fallback-background-color = #514761 (--cw-charcoal-400)
+ *   text              → avatar/fallback-text-color = #ffffff
+ *   subtext           → avatar/text-subtext-color = #c3c3c3
+ */
+
+/* ─── Shell ──────────────────────────────────────────────────────────────────*/
+.cw-site-header {
+  align-items: center;
+  background: var(--cw-surface-base);           /* #201c26 */
+  border-bottom: 1px solid var(--cw-mauve-700); /* #3b3248 */
+  display: flex;
+  height: 72px;
+  justify-content: space-between;
+  padding: 0 var(--cw-space-7, 28px);
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+
+/* ─── Left group ─────────────────────────────────────────────────────────────*/
+.cw-site-header__left {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+/* ─── Datetime ───────────────────────────────────────────────────────────────*/
+.cw-site-header__datetime {
+  align-items: center;
+  color: var(--cw-text-primary);
+  display: flex;
+  gap: 10px;
+}
+
+.cw-site-header__date {
+  color: #ffffff;                               /* header-nav/text-color-date */
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cw-site-header__tz {
+  color: var(--cw-grey-500);                    /* #c3c3c3 */
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ─── Right group ────────────────────────────────────────────────────────────*/
+.cw-site-header__right {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+/* ─── Generic icon button ────────────────────────────────────────────────────*/
+.cw-site-header__icon-btn {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: var(--cw-radius-base);
+  color: #ffffff;                               /* header-nav/icon-color-default */
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  padding: var(--cw-space-1);
+  transition: background 0.15s;
+}
+
+.cw-site-header__icon-btn:hover {
+  background: var(--cw-interaction-subtle-3);
+}
+
+.cw-site-header__icon-btn:focus-visible {
+  outline: 2px solid var(--cw-primary-state-focus-visible);
+  outline-offset: 2px;
+}
+
+/* ─── Notification wrapper + badge ──────────────────────────────────────────*/
+.cw-site-header__notif-wrap {
+  position: relative;
+}
+
+.cw-site-header__badge {
+  background: var(--cw-yellow-500);            /* #ffcc17 */
+  border: 2px solid var(--cw-surface-base);    /* #201c26 */
+  border-radius: 4px;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 16px;
+  padding: 1px 2px;
+  pointer-events: none;
+  position: absolute;
+  right: -4px;
+  text-align: center;
+  top: -6px;
+}
+
+/* ─── Avatar button ──────────────────────────────────────────────────────────*/
+.cw-site-header__user {
+  position: relative;
+}
+
+.cw-site-header__avatar-btn {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: var(--cw-radius-base);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 4px;
+  padding: 2px 4px;
+  transition: background 0.15s;
+}
+
+.cw-site-header__avatar-btn:hover {
+  background: var(--cw-interaction-subtle-3);
+}
+
+.cw-site-header__avatar-btn:focus-visible {
+  outline: 2px solid var(--cw-primary-state-focus-visible);
+  outline-offset: 2px;
+}
+
+/* ─── Avatar circle ──────────────────────────────────────────────────────────*/
+.cw-site-header__avatar {
+  align-items: center;
+  background: var(--cw-charcoal-400);          /* #514761 */
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  height: 38px;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  width: 38px;
+}
+
+.cw-site-header__avatar--lg {
+  flex-shrink: 0;
+  font-size: 14px;
+  height: 38px;
+  width: 38px;
+}
+
+/* ─── Chevron ────────────────────────────────────────────────────────────────*/
+.cw-site-header__chevron {
+  color: #ffffff;
+  transition: transform 0.2s;
+}
+
+.cw-site-header__chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ─── User menu dropdown ─────────────────────────────────────────────────────*/
+.cw-user-menu {
+  background: var(--cw-secondary-main);        /* #292431 — dropdown/container-bg */
+  border-radius: var(--cw-radius-lg);
+  box-shadow:
+    1px 0 8px 2px rgba(0,0,0,0.10),
+    0 2px 8px 0 rgba(0,0,0,0.20),
+    0 1px 2px 0 rgba(0,0,0,0.28);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 600;
+}
+
+/* ─── Profile section ────────────────────────────────────────────────────────*/
+.cw-user-menu__profile {
+  align-items: center;
+  border-bottom: 1px solid var(--cw-mauve-700); /* #3b3248 */
+  display: flex;
+  gap: var(--cw-space-2);
+  padding: var(--cw-space-3);
+}
+
+.cw-user-menu__profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cw-space-1);
+}
+
+.cw-user-menu__name {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cw-user-menu__meta {
+  align-items: center;
+  display: flex;
+  gap: var(--cw-space-2);
+}
+
+.cw-user-menu__meta-item {
+  align-items: center;
+  color: var(--cw-grey-500);                    /* #c3c3c3 */
+  display: inline-flex;
+  font-size: 14px;
+  gap: var(--cw-space-1);
+  white-space: nowrap;
+}
+
+.cw-user-menu__dot {
+  background: var(--cw-grey-500);
+  border-radius: 50%;
+  height: 5px;
+  width: 5px;
+}
+
+.cw-user-menu__copy-btn {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--cw-grey-500);
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0;
+  transition: color 0.12s;
+}
+
+.cw-user-menu__copy-btn:hover {
+  color: var(--cw-text-primary);
+}
+
+/* ─── Menu items ─────────────────────────────────────────────────────────────*/
+.cw-user-menu__item {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: #ffffff;                               /* dropdown/option-text-color-default */
+  cursor: pointer;
+  display: flex;
+  font-family: var(--cw-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  gap: var(--cw-space-2);
+  height: 44px;
+  justify-content: space-between;
+  padding: 0 var(--cw-space-3);
+  text-align: left;
+  transition: background 0.12s;
+  width: 100%;
+}
+
+.cw-user-menu__item:hover {
+  background: var(--cw-interaction-subtle-3);
+}
+
+.cw-user-menu__item:focus-visible {
+  outline: 2px solid var(--cw-primary-state-focus-visible);
+  outline-offset: -2px;
+}
+
+.cw-user-menu__item--divider {
+  border-top: 1px solid var(--cw-mauve-700);   /* #3b3248 */
+}
+
+.cw-user-menu__item--danger {
+  color: #ff8983;                               /* dropdown/option-text-color-error */
+}
+
+.cw-user-menu__item-icon {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.cw-user-menu__item-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.cw-user-menu__item-right {
+  align-items: center;
+  color: var(--cw-text-secondary);
+  display: inline-flex;
+  flex-shrink: 0;
+}
