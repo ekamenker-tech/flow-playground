@@ -166,7 +166,7 @@ export function SiteHeader({
         <Button
           variant="contained"
           color="primary"
-          size="small"
+          
           startIcon={<Icon name="cloud-upload" />}
           onClick={onUpload}
         >
@@ -209,7 +209,7 @@ export function SiteHeader({
             <span className="cw-site-header__avatar">{user.initials}</span>
             <Icon
               name="chevron-down-small"
-              iconSize="small"
+              icon
               className={`cw-site-header__chevron${menuOpen ? " cw-site-header__chevron--open" : ""}`}
             />
           </button>
@@ -227,7 +227,7 @@ export function SiteHeader({
                     <span className="cw-user-menu__meta-item">
                       ID: {user.userId}
                       <button className="cw-user-menu__copy-btn" aria-label="Copy user ID">
-                        <Icon name="copy" iconSize="small" />
+                        <Icon name="copy" icon />
                       </button>
                     </span>
                     <span className="cw-user-menu__dot" aria-hidden="true" />
@@ -235,7 +235,7 @@ export function SiteHeader({
                       <span className="cw-user-menu__meta-item">
                         {user.tipJarLabel}
                         <button className="cw-user-menu__copy-btn" aria-label="Copy tip jar link">
-                          <Icon name="copy" iconSize="small" />
+                          <Icon name="copy" icon />
                         </button>
                       </span>
                     )}

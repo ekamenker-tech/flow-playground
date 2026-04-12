@@ -119,10 +119,10 @@
   min-width: 16px;
   padding: 1px 2px;
   pointer-events: none;
+  left: 15px;             /* Figma: badge x=15 relative to 24px bell container */
   position: absolute;
-  right: -4px;
   text-align: center;
-  top: -6px;
+  top: -5px;              /* Figma: badge y=-5 relative to bell container */
 }
 
 /* ─── Avatar button ──────────────────────────────────────────────────────────*/
@@ -318,3 +318,4 @@
   display: inline-flex;
   flex-shrink: 0;
 }
+
