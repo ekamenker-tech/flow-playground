@@ -17,12 +17,14 @@ export function App() {
           initials: "JD",
           userId: "6346442",
           tipJarLabel: "Tip Jar",
-          onVisitStore: () => {},
-          onStoreDetails: () => {},
-          onPayoutSettings: () => {},
-          onContactInfo: () => {},
-          onSettings: () => {},
-          onLogout: () => {},
+          onVisitStore:    () => {},
+          onTipJar:        () => {},
+          onStoreDetails:  () => {},
+          onPayoutSettings:() => {},
+          onContactInfo:   () => {},
+          onReferAndEarn:  () => {},
+          onSettings:      () => {},
+          onLogout:        () => {},
         }}
       />
       <PlaygroundPage />
