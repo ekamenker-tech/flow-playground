@@ -207,10 +207,7 @@ export function SiteHeader({
             aria-label={`User menu for ${user.name}`}
           >
             <span className="cw-site-header__avatar">{user.initials}</span>
-            <Icon
-              name="chevron-down-small"
-              icon
-              className={`cw-site-header__chevron${menuOpen ? " cw-site-header__chevron--open" : ""}`}
+            <Icon name="chevron-down-small" iconSize="small" className={`cw-site-header__chevron${menuOpen ? " cw-site-header__chevron--open" : ""}`}
             />
           </button>
 
@@ -227,7 +224,7 @@ export function SiteHeader({
                     <span className="cw-user-menu__meta-item">
                       ID: {user.userId}
                       <button className="cw-user-menu__copy-btn" aria-label="Copy user ID">
-                        <Icon name="copy" icon />
+                        <Icon name="copy" iconSize="small" />
                       </button>
                     </span>
                     <span className="cw-user-menu__dot" aria-hidden="true" />
@@ -235,7 +232,7 @@ export function SiteHeader({
                       <span className="cw-user-menu__meta-item">
                         {user.tipJarLabel}
                         <button className="cw-user-menu__copy-btn" aria-label="Copy tip jar link">
-                          <Icon name="copy" icon />
+                          <Icon name="copy" iconSize="small" />
                         </button>
                       </span>
                     )}
@@ -271,3 +268,4 @@ export function SiteHeader({
     </header>
   );
 }
+
